@@ -1,0 +1,98 @@
+@import "../../styles/variables.scss";
+
+.fundo-sobre {
+    display: flex;
+    flex: 2;
+    margin: 8rem;
+    height: fit-content;
+
+    @include breakpoint(mf1) {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0rem;
+    }
+
+    .cards-sobre {
+        background-color: $graybackground;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        border-radius: 2rem;
+        height: fit-content;
+
+        @include breakpoint(mf1) {
+            flex: 2;
+            margin: 5rem;
+        }
+
+        #imagem-um-sobre {
+            background-image: url("../../images/um.png");
+        }
+
+        #imagem-dois-sobre {
+            background-image: url("../../images/dois.png");
+        }
+
+        #imagem-tres-sobre {
+            background-image: url("../../images/tres.png");
+        }
+
+        #imagem-um-sobre,
+        #imagem-dois-sobre,
+        #imagem-tres-sobre {
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include breakpoint(mf3) {
+                background-image: url();
+                width: 0;
+                height: 0;
+            }
+        }
+
+        .card-sobre {
+            display: flex;
+            padding: 2rem;
+
+            @include breakpoint(mf3) {
+                flex-direction: column;
+            }
+
+            .card-sobre-texto {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 2rem;
+            }
+
+            .foto-sobre-numeros {
+                width: 250px;
+                height: 250px;
+
+            }
+        }
+    }
+
+    .foto-pessoal-sobre {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .foto-perfil-sobre {
+            background-image: url("../../images/my_foto_costas.png");
+            width: 385px;
+            height: 649px;
+            box-shadow: 0px 15px 10px -15px #111;
+
+            @include breakpoint(mf1) {
+                background-image: url("");
+                box-shadow: none;
+                flex: 0;
+            }
+        }
+    }
+
+}

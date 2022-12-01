@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+
+.fundo-wil {
+    background-color: $blue;
+    height: 90vh;
+    margin-top: 100px;
+
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(mf2) {
+        flex-direction: column;
+        height: initial;
+    }
+
+    .fundo-wil-texto {
+        padding: 3rem;
+        width: 50%;
+
+        @include breakpoint(mf2) {
+            padding: 2rem;
+            width: fit-content;
+        }
+    }
+
+    &,
+    .fundo-wil-img {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .fundo-wil-img {
+        height: 90vh;
+
+        @include breakpoint(mf1) {
+            & {
+                display: flex;
+                align-items: flex-end;
+            }
+
+            .imagem-wil {
+                width: 80%;
+                height: 80%;
+            }
+        }
+
+        @include breakpoint(mf2) {
+            height: fit-content;
+        }
+    }
+}

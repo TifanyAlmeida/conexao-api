@@ -1,0 +1,36 @@
+// arquivo global de estilização
+@import "./variables.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $Poppins;
+    width: 100%;
+    color: $dark;
+}
+
+#root {
+    height: 100%;
+}
+
+// scrool
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $blue;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $bluelight;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $bluedark;
+}

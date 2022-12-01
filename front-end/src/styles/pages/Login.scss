@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+.fundo-login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $blue;
+    margin-top: 100px;
+    height: 90vh;
+
+    .card-login-externo {
+        background-color: aliceblue;
+        border-radius: 2rem;
+
+        &,
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+
+            input {
+                padding: 0.5rem 1rem;
+                font-size: 16px;
+            }
+
+            .botao-entrar-login {
+
+                margin-top: 2rem;
+                border-style: none;
+                padding: 1rem 1rem;
+                font-size: 16px;
+                transition: 0.3s ease all;
+                background-color: $blue;
+                color: $light;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $bluedark;
+                    border-radius: 1rem;
+                }
+
+            }
+        }
+    }
+
+}

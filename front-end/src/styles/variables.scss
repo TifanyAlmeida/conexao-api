@@ -1,0 +1,68 @@
+//arquivo sass de auxílio para criação de variáveis e assim a diminuição de texto no arquivo sass principal
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+$Poppins: "Poppins", sans-serif;
+
+// colors
+$dark: rgb(29, 29, 29);
+$light: #fff;
+$blue: rgb(62 196 233);
+$bluelight: rgb(30, 101, 121);
+$bluedark: rgb(68, 146, 168);
+$bg: rgb(244, 244, 255);
+$graybutton: #b3b3b3;
+$hovergraybutton: rgb(212, 216, 216);
+$graybackground: #f5f5f5;
+$graybacksobre: #EBEBEB;
+
+// spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// border radius
+$borderRadius: 12px;
+
+// header height
+$headerHeight: 100px;
+
+@mixin breakpoint($point) {
+    @if $point ==md {
+
+        // 928px
+        @media (min-width: 58em) {
+            @content;
+        }
+    }
+
+    @if $point ==mt {
+
+        @media (max-width: 58em) {
+            @content;
+        }
+    }
+
+    @if $point ==mf1 {
+
+        // 1312px
+        @media (max-width: 82em) {
+            @content;
+        }
+    }
+
+    // 912px
+    @if $point ==mf2 {
+
+        @media (max-width: 57em) {
+            @content;
+        }
+    }
+
+    // 592px
+    @if $point ==mf3 {
+
+        @media (max-width: 37em) {
+            @content;
+        }
+    }
+
+}

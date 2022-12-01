@@ -1,0 +1,76 @@
+@import '../../styles/variables.scss';
+
+.fundo-cartao {
+    padding: 2rem;
+    padding-bottom: 5rem;
+
+    @include breakpoint(mt) {
+        padding: 0;
+    }
+
+    .titulo-cartao {
+        margin: 2rem;
+    }
+
+    .conteudo-cartao {
+        @include breakpoint(mt) {
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &,
+        .conteudo-cartao-esquerda,
+        .conteudo-cartao-direita {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .conteudo-cartao-esquerda {
+
+            .imagem-cartao1 {
+                width: 400px;
+                height: 422px;
+
+                @include breakpoint(mt) {
+                    width: 280px;
+                    height: 302px;
+                }
+            }
+        }
+
+        .conteudo-cartao-direita {
+            width: 40%;
+            align-items: center;
+
+            @include breakpoint(mt) {
+                width: fit-content;
+                padding: 1.5rem;
+            }
+
+            .div-textos-cartao {
+                margin-left: 2rem;
+
+                @include breakpoint(mt) {
+                    margin-left: 0;
+                }
+
+                .card-cartao {
+                    margin-bottom: 1rem;
+                }
+
+                .botao-adquirir-cartao {
+                    margin-top: 2rem;
+                    border-style: none;
+                    padding: 1rem 1rem;
+                    transition: all 0.9s;
+
+                    &:hover {
+                        background-color: $hovergraybutton;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    }
+}

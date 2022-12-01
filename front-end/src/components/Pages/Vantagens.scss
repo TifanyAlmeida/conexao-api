@@ -1,0 +1,77 @@
+@import "../../styles/variables.scss";
+
+.fundo-texto-vantagem {
+    padding-bottom: 5rem;
+
+    .div-imagem-fundo-onda {
+        width: 100%;
+    }
+
+    .conteudo-ondas {
+        flex-direction: column;
+        align-items: center;
+
+        &,
+        .div-cards-externo {
+            display: flex;
+        }
+
+        .div-cards-externo {
+            @include breakpoint(mt) {
+                flex-direction: column;
+            }
+        }
+
+        #sub-title-conteudo-ondas {
+            color: $graybutton;
+            padding: 0rem 1rem;
+
+            .title-conteudo-ondas {
+                color: $dark;
+            }
+        }
+
+        .div-cards-externo {
+            width: fit-content;
+            padding: 0.5rem;
+
+            .card-1 {
+                background-color: $graybackground;
+                cursor: pointer;
+                margin: 0.5rem;
+                max-width: 300px;
+                border-radius: 2rem;
+                transition: all 0.9s;
+
+                &:hover{
+                    opacity: 0.7;
+                }
+
+                .imagem-delivery-vantagens {
+                    background-image: url("../../images/parceiros_delivery.png");
+                }
+
+                .imagem-transporte-vantagens {
+                    background-image: url("../../images/parceiros_transporte.jpeg");
+                }
+
+                .imagem-stream-vantagens {
+                    background-image: url("../../images/parceiros_streaming.jpeg");
+                }
+
+                .imagem-delivery-vantagens,
+                .imagem-transporte-vantagens,
+                .imagem-stream-vantagens {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    border-radius: 2rem 2rem 0rem 0rem;
+                    height: 200px;
+                }
+
+                .texto-card1-vantagens {
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+}

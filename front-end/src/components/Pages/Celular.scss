@@ -1,0 +1,79 @@
+@import "../../styles/variables.scss";
+
+.fundo-celular {
+    display: flex;
+    height: 100vh;
+    flex: 1;
+
+    @include breakpoint(mt) {
+        flex-direction: column;
+        height: inherit;
+    }
+
+    .fundo-celular-esquerda {
+        flex: 0.5;
+        background-color: $blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .celular-img {
+            width: 500px;
+            margin-bottom: 5rem;
+
+            @include breakpoint(mf1) {
+                width: 400px;
+            }
+
+            @include breakpoint(mt) {
+                width: 300px;
+            }
+        }
+    }
+
+    .fundo-celular-direita {
+        flex: 0.5;
+        padding: 3rem;
+        background-color: $graybackground;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        @include breakpoint(mt) {
+            align-items: center;
+        }
+
+        .texto-celular-direita {
+            width: 80%;
+        }
+
+        .celular-img-jake {
+            width: 400px;
+
+            @include breakpoint(mt) {
+                width: 300px;
+            }
+        }
+
+        .botao-baixar-app {
+            border-style: none;
+            padding: 1rem 5rem;
+            width: max-content;
+            margin: 2rem 0rem;
+            transition: all 0.9s;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $hovergraybutton;
+            }
+        }
+    }
+
+    .fundo-celular-esquerda,
+    .fundo-celular-direita {
+        @include breakpoint(mt) {
+            padding: 2rem;
+        }
+    }
+}

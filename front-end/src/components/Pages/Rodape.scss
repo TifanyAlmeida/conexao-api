@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.fundo-rodape {
+    background-color: $blue;
+    bottom: 0;
+
+    .fundo-contato-rodape {
+        width: fit-content;
+        padding: 2rem;
+        box-shadow: 15px 0px 10px -15px #111;
+
+
+        @include breakpoint(mf3) {
+            padding: 0rem;
+        }
+
+        .contato-rodape {
+            background-color: $light;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin-left: 5rem;
+            transition: all 0.9s;
+
+            &:hover{
+                cursor: pointer;
+                background-color: $graybackground;
+            }
+
+            .icones_contato {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark;
+    }
+}

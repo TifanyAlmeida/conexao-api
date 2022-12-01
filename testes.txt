@@ -1,0 +1,5 @@
+'nome': 'Tifany Almeida',
+'nascimento': '2000-10-03',
+'cpf': '12345678910',
+'email': 'ti@gmail.com',
+'password': '1234'

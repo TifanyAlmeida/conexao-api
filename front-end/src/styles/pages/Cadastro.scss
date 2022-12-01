@@ -1,0 +1,60 @@
+@import "../variables.scss";
+
+.fundo-cadastro-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $blue;
+    margin-top: 100px;
+    height: 100vh;
+
+
+    .card-cadastro-externo {
+        background-color: aliceblue;
+        border-radius: 2rem;
+        margin: 7rem 0rem;
+
+        &,
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+
+            @include breakpoint(mf3) {
+                padding: 1rem;
+            }
+
+
+            input {
+                padding: 0.5rem 1rem;
+                font-size: 16px;
+
+                @include breakpoint(mf3) {
+                    font-size: 14px;
+                }
+            }
+
+            #salarios {
+                padding: 0.5rem;
+            }
+
+            .botao-cadastro {
+                margin-top: 2rem;
+                border-style: none;
+                padding: 1rem 1rem;
+                font-size: 16px;
+                transition: 0.3s ease all;
+                background-color: $blue;
+                color: $light;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $bluedark;
+                    border-radius: 1rem;
+                }
+
+            }
+        }
+    }
+
+}
