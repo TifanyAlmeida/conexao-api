@@ -12,9 +12,7 @@ const Cadastro = () => {
     const submit = (e: SyntheticEvent) =>{
         e.preventDefault();
 
-        console.log({
-            nome, email, cpf, nascimento, senha
-        })
+        fetch('http://127.0.0.1:8000/api/register/')
     
     }
 
@@ -27,19 +25,19 @@ const Cadastro = () => {
                 <form onSubmit={submit}>
 
                     <label for="nome"> Nome</label>
-                    <input type="text" name="nome" placeholder="Tifany Almeida" onChange={e => setNome(e.target.value)}/>
+                    <input type="text" name="nome" placeholder="Tifany Almeida" onChange={e => setNome(e.target.value)} required/>
 
                     <label for="nascimento">Nascimento</label>
-                    <input type="date" name="nascimento" onChange={e => setNascimento(e.target.value)}/>
+                    <input type="date" name="nascimento" onChange={e => setNascimento(e.target.value)} required/>
 
                     <label for="cpf">CPF</label>
-                    <input type="cpf" name="cpf" onChange={e => setCpf(e.target.value)}/>
+                    <input type="cpf" name="cpf" onChange={e => setCpf(e.target.value)} required/>
 
                     <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="ti@gmail.com" onChange={e => setEmail(e.target.value)}/>
+                    <input type="email" name="email" placeholder="ti@gmail.com" onChange={e => setEmail(e.target.value)} required/>
 
                     <label for="senha">Senha</label>
-                    <input type="password" name="senha" onChange={e => setSenha(e.target.value)}/>
+                    <input type="password" name="senha" onChange={e => setSenha(e.target.value)} required/>
 
                     <button type="submit" className="botao-cadastro">Cadastro</button>
 

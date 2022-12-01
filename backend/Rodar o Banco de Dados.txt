@@ -1,0 +1,15 @@
+Criar um banco de dados com o nome
+django_auth_front
+
+
+Alterar as configurações para a do seu pc
+em settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_auth_front',
+        'USER': 'root',
+        'PASSWORD': '1234'
+    }
+}

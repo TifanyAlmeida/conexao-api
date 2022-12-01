@@ -6,13 +6,20 @@ from .models import User
 import jwt, datetime
 
 class RegisterView(APIView):
+
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
     def post(self, request):
         serializer_register = UserSerializer(data=request.data)
         serializer_register.is_valid(raise_exception=True)
         serializer_register.save()
         return Response(serializer_register.data)
 
+
 class LoginView(APIView):
+    
     def post(self, request):
         email = request.data['email']
         password = request.data['password']
