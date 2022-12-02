@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import apiLogin from "../services/api";
+import axios from "axios";
 import "../styles/pages/Login.scss";
 
 const Login = () => {
@@ -8,8 +8,16 @@ const Login = () => {
     const [emailL, setEmail] = useState('');
     const [senhaL, setSenha] = useState('');
     
+    const baseURL = "http://127.0.0.1:8000/api/register/";
+
+    React.useEffect(() => {
+        axios.get({baseURL}).then((response) => {
+            setUser(response.data);
+          });
+    }, []);
+    
     const submit = useEffect(() => {
-        apiLogin
+        axios
             .post("http://127.0.0.1:8000/api/login/", {
                 email: emailL,
                 password: senhaL

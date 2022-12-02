@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import "../styles/pages/Cadastro.scss";
-import apiLogin from "../services/api";
+import axios from "axios";
 
 const Cadastro = () => {
 
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
 
     const [nome, setNome] = useState('');
     const [nascimento, setNascimento] = useState('');
@@ -12,24 +12,30 @@ const Cadastro = () => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    const submit = useEffect(() => {
+    const baseURL = "http://127.0.0.1:8000/api/register/";
 
-        apiLogin
-            .post("http://127.0.0.1:8000/api/register/", {
+    React.useEffect(() => {
+        axios.get({baseURL}).then((response) => {
+            setUser(response.data);
+          });
+        }, []);
+
+    const submit = useEffect(() => {
+        axios
+            .post(baseURL, {
                 nome: nome,
                 nascimento: nascimento,
                 cpf: cpf,
                 email: email,
-                senha: senha
-        })
+                password: senha
+            })
 
-        .then((response) => setUser(response.data))
-        .catch((err) => {
-            console.error("ops! ocorreu um erro "+err)
-        });
+            .then((response) => setUser(response.data))
+            .catch((err) => {
+                console.error("ops! ocorreu um erro "+err)
+            });
 
     }, []);
-    
 
     return (
         <div className="fundo-cadastro-page">
