@@ -58,6 +58,7 @@ DATABASES = {
         'NAME': 'django_auth_front',
         'USER': 'root',
         'PASSWORD': '1234'
+        
     }
 }
 

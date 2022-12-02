@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "../styles/pages/Cadastro.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
 
@@ -12,15 +13,12 @@ const Cadastro = () => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
+    const navigate = useNavigate()
+
     const baseURL = "http://127.0.0.1:8000/api/register/";
 
-    React.useEffect(() => {
-        axios.get({baseURL}).then((response) => {
-            setUser(response.data);
-          });
-        }, []);
-
-    const submit = useEffect(() => {
+    const submit = () => {
+        console.log(nome)
         axios
             .post(baseURL, {
                 nome: nome,
@@ -34,8 +32,8 @@ const Cadastro = () => {
             .catch((err) => {
                 console.error("ops! ocorreu um erro "+err)
             });
-
-    }, []);
+        navigate('/login')
+    };
 
     return (
         <div className="fundo-cadastro-page">

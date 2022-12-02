@@ -1,22 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import "../styles/pages/Login.scss";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
     const [post, setPost] = useState();
     const [emailL, setEmail] = useState('');
     const [senhaL, setSenha] = useState('');
+
+    const navigate = useNavigate();
     
     const baseURL = "http://127.0.0.1:8000/api/login/";
-
-    React.useEffect(() => {
-        axios.get({baseURL}).then((response) => {
-            setPost(response.data);
-          });
-    }, []);
     
-    const submit = useEffect(() => {
+    const submit = () => {
         axios
             .post(baseURL, {
                 email: emailL,
@@ -26,8 +23,9 @@ const Login = () => {
         .catch((err) => {
             console.error("ops! ocorreu um erro "+err)
         });
+        navigate('/usuario')
 
-    }, []);
+    };
     
     // }
     return (
