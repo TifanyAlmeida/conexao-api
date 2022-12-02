@@ -1,7 +1,10 @@
-import React, {SyntheticEvent, useState} from "react";
+import React, {useState, useEffect} from "react";
 import "../styles/pages/Cadastro.scss";
+import apiLogin from "../services/api";
 
 const Cadastro = () => {
+
+    const [user, setUser] = useState();
 
     const [nome, setNome] = useState('');
     const [nascimento, setNascimento] = useState('');
@@ -9,12 +12,24 @@ const Cadastro = () => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    const submit = (e: SyntheticEvent) =>{
-        e.preventDefault();
+    const submit = useEffect(() => {
 
-        fetch('http://127.0.0.1:8000/api/register/')
+        apiLogin
+            .post("http://127.0.0.1:8000/api/register/", {
+                nome: nome,
+                nascimento: nascimento,
+                cpf: cpf,
+                email: email,
+                senha: senha
+        })
+
+        .then((response) => setUser(response.data))
+        .catch((err) => {
+            console.error("ops! ocorreu um erro "+err)
+        });
+
+    }, []);
     
-    }
 
     return (
         <div className="fundo-cadastro-page">

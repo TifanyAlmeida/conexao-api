@@ -1,24 +1,33 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import apiLogin from "../services/api";
 import "../styles/pages/Login.scss";
 
 const Login = () => {
 
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-
-    const submit = (e: SyntheticEvent) =>{
-        e.preventDefault();
-
-        console.log(email, senha)
-        fetch('http://127.0.0.1:8000/api/login/')
+    const [user, setUser] = useState();
+    const [emailL, setEmail] = useState('');
+    const [senhaL, setSenha] = useState('');
     
-    }
+    const submit = useEffect(() => {
+        apiLogin
+            .post("http://127.0.0.1:8000/api/login/", {
+                email: emailL,
+                password: senhaL
+        })
+        .then((response) => setUser(response.data))
+        .catch((err) => {
+            console.error("ops! ocorreu um erro "+err)
+        });
+
+    }, []);
+    
+    // }
     return (
         <div className="fundo-login-page">
             <div className="card-login-externo">
                 <h1>Login</h1>
 
-                <form action="" method="POST">
+                <form onSubmit={submit}>
 
                     <label for="email">Email</label>
                     <input type="email" name="email" onChange={e => setEmail(e.target.value)} required/>
@@ -31,6 +40,6 @@ const Login = () => {
                 </form>
             </div>
         </div>
-    )
+    );
 }
 export default Login;
