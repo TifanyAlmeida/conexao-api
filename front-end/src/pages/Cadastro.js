@@ -30,7 +30,7 @@ const Cadastro = () => {
                 password: senha
             })
 
-            .then((response) => setUser(response.data))
+            .then((response) => response.json())
             .catch((err) => {
                 console.error("ops! ocorreu um erro "+err)
             });

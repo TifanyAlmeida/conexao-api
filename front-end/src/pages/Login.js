@@ -22,7 +22,7 @@ const Login = () => {
                 email: emailL,
                 password: senhaL
         })
-        .then((response) => setPost(response.data))
+        .then((response) => response.json())
         .catch((err) => {
             console.error("ops! ocorreu um erro "+err)
         });
