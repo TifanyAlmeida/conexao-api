@@ -4,25 +4,25 @@ import "../styles/pages/Login.scss";
 
 const Login = () => {
 
-    const [user, setUser] = useState();
+    const [post, setPost] = useState();
     const [emailL, setEmail] = useState('');
     const [senhaL, setSenha] = useState('');
     
-    const baseURL = "http://127.0.0.1:8000/api/register/";
+    const baseURL = "http://127.0.0.1:8000/api/login/";
 
     React.useEffect(() => {
         axios.get({baseURL}).then((response) => {
-            setUser(response.data);
+            setPost(response.data);
           });
     }, []);
     
     const submit = useEffect(() => {
         axios
-            .post("http://127.0.0.1:8000/api/login/", {
+            .post(baseURL, {
                 email: emailL,
                 password: senhaL
         })
-        .then((response) => setUser(response.data))
+        .then((response) => setPost(response.data))
         .catch((err) => {
             console.error("ops! ocorreu um erro "+err)
         });
