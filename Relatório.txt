@@ -1,0 +1,1 @@
+Estou utilizando tudo o que "aprendemos" com exceção do cadastro e login que eu tentei fazer, mas não consegui. Entretanto, mantive o código pois o login e cadastro via api está funcionando, o front end está funcionando, eu apenas tentei mas não consegui juntar os dois.

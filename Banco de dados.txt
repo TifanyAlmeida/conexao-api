@@ -1,0 +1,44 @@
+Estou usando um banco de dados sql,
+crie um banco sql com o nome: django_auth_front
+
+E, no arquivo settings.py no backend altere essas configurações para a do seu computador:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_auth_front',
+        'USER': 'root',
+        'PASSWORD': '1234'
+    }
+}
+
+----
+
+- Além do npm install, para o django, na pasta backends é necessário criar a env: py -m venv env
+
+- Ativar o activate
+
+dentro de backend
+cd env\scripts
+.\activate
+
+depois, vá para a pasta auth
+cd backend\auth
+
+nessa pasta rode o comando para instalar as bibliotecas utilizadas:
+
+py -m pip install -r requirements.txt
+
+Caso esteja criando o banco pela primeira vez, para gerar os modelos rode os comandos
+
+py .\manage.py makemigrations
+
+seguido de:
+
+py .\manage.py migrate
+
+
+Se não houver erros já pode rodar o servidor,
+py .\manage.py runserver
+
+
