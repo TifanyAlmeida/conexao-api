@@ -4,8 +4,7 @@ import "../styles/pages/Login.scss";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
-    const [post, setPost] = useState();
+    
     const [emailL, setEmail] = useState('');
     const [senhaL, setSenha] = useState('');
 
@@ -27,7 +26,6 @@ const Login = () => {
 
     };
     
-    // }
     return (
         <div className="fundo-login-page">
             <div className="card-login-externo">

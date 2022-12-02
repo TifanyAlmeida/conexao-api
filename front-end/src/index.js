@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Usuario from "../src/pages/Usuario";
-import { BrowserRouter, Routes, Route, createBrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const container = document.getElementById("root")
 const root = createRoot(container);
@@ -31,5 +31,11 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
-    </>
+    
+
+    <RouterProvider
+    router={routes}
+    />
+
+  </>
 );

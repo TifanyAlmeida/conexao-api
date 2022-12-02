@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
 
-    const [user, setUser] = useState(null);
-
     const [nome, setNome] = useState('');
     const [nascimento, setNascimento] = useState('');
     const [cpf, setCpf] = useState('');
