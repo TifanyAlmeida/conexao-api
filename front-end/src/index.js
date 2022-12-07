@@ -13,29 +13,19 @@ import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider } fro
 const container = document.getElementById("root")
 const root = createRoot(container);
 
-const routes = createBrowserRouter([
-  {
-    path: '/usuario',
-    element: <Usuario/>
-  }
-])
-
 root.render(
   <>
+
     <BrowserRouter>
       <Routes>
         <Route exatcly path='/' element={<App />}>
             <Route index element = {<Home/>} />
             <Route path='cadastro' element={<Cadastro />}/>
             <Route path='login' element={<Login />}/>
+            <Route path='/usuario' element={<Usuario />}/>
         </Route>
       </Routes>
     </BrowserRouter>
-    
-
-    <RouterProvider
-    router={routes}
-    />
 
   </>
 );
